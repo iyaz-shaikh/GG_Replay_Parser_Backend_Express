@@ -2,10 +2,10 @@
 
 var pool = mysql.createPool({
     connectionLimit: 100,
-    host: 'ggreplaydatabase.c1mkgc7sz4am.us-east-1.rds.amazonaws.com',
-    user: 'kupo',
-    password: 'R4nD0mPW!',
-    database: 'ggreplay',
+    host: 'opuk.ca',
+    user: 'opukca5',
+    password: 'Beakdriver1!',
+    database: 'opukca5_Statistics',
     debug: false
 });
 

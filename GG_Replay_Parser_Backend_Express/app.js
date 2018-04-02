@@ -21,8 +21,8 @@ app.set('view engine', 'pug');
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({limit: '5mb', extended: true, parameterLimit: 5000 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -30,6 +30,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.get('/steamIDs', replayAPI.getSteamIDs);
 app.post('/addSteamIDs', replayAPI.addSteamIDs);
+app.post('/addReplayData', replayAPI.addReplayData);
 //app.delete('/products/:id', data.deleteProduct);
 //app.put('/products/:id', data.updateProduct);
 

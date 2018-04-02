@@ -36,9 +36,6 @@
     <Compile Include="public\javascripts\replayAPI.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="public\javascripts\data.js">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Content Include="package.json" />

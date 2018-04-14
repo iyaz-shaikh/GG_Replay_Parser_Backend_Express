@@ -4,8 +4,8 @@ var request = require('request');
 var steamAPIKey = "B677FB1E5073E7D72F52F57FB8E4FFD9";
 //Keys
 let WINNER_ID = "Winner";
-let PLAYER1_STEAMID = "Player1_SteamID";
-let PLAYER2_STEAMID = "Player2_SteamID";
+let PLAYER_STEAMID = "Player_SteamID";
+let OPPONENT_STEAMID = "Opponent_SteamID";
 let UPLOADER_STEAMID = "Uploader_SteamID";
 let TIMESTAMP_ID = "Timestamp";
 let CHARACTER1_ID = "Player1_Character";
@@ -36,7 +36,6 @@ exports.addSteamIDs = function (req, res) {
 
     request(url, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            //TODO: Pull steam names (listed under personaname) from body variable (steam API) then add them as params to createConnection.
             var bodyObject = JSON.parse(body);
             var players = bodyObject.response.players;
             var steamAliasArray = [];
@@ -79,9 +78,9 @@ exports.addReplayData = function (req, res) {
         let replay = replays[i];
         var replayInSQLFormat = [];
         replayInSQLFormat[0] = replay[UNIQUEHASH_ID];
-        replayInSQLFormat[1] = replay[PLAYER1_STEAMID];
+        replayInSQLFormat[1] = replay[PLAYER_STEAMID];
         replayInSQLFormat[2] = replay[CHARACTER1_ID];
-        replayInSQLFormat[3] = replay[PLAYER2_STEAMID];
+        replayInSQLFormat[3] = replay[OPPONENT_STEAMID];
         replayInSQLFormat[4] = replay[CHARACTER2_ID];
         replayInSQLFormat[5] = replay[UPLOADER_STEAMID];
         replayInSQLFormat[6] = replay[WINNER_ID];

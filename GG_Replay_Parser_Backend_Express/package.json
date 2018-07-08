@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app"
+    "start": "node --inspect=3000 app.js -p 1337"
   },
   "description": "GG_Replay_Parser_Backend_Express",
   "author": {

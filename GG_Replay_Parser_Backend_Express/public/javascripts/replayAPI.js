@@ -92,7 +92,7 @@ exports.addReplayData = function (req, res) {
 
         if (err) throw err;
         console.log("Connected!");
-        var sql = "INSERT INTO ggreplaydata_test (Unique_Hash, Player1_SteamID, Player1_Character, Player2_SteamID, Player2_Character, Uploader_SteamID, Winner, Timestamp) VALUES ?" 
+        var sql = "INSERT IGNORE INTO ggreplaydata_test (Unique_Hash, Player1_SteamID, Player1_Character, Player2_SteamID, Player2_Character, Uploader_SteamID, Winner, Timestamp) VALUES ?" 
         connection.query(sql, [params], function (err, result) {
             if (err) throw err;
             console.log("Number of records inserted: " + result.affectedRows);

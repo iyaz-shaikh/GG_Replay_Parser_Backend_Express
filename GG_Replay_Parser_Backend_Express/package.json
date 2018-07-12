@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node --inspect=3000 app.js -p 1337"
+    "start": "node --inspect=3000 app.js -p 2541"
   },
   "description": "GG_Replay_Parser_Backend_Express",
   "author": {
@@ -15,7 +15,9 @@
     "debug": "^2.2.0",
     "express": "^4.14.0",
     "morgan": "^1.7.0",
+    "mysql": "^2.15.0",
     "pug": "^2.0.0-beta6",
+    "request": "^2.87.0",
     "serve-favicon": "^2.3.0"
   }
 }
